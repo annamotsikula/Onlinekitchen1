@@ -1,5 +1,5 @@
 <div class="login">
-  <form class="logform" [formGroup]="signInform" (ngsubmit)="onsubmit()">
+  <form class="logform" [formGroup]="signInform" (submit)="onsubmit()">
     <div class="txt">
       <input id="user" type="text" placeholder="Username" formControlName="username"/>
       <label for="user" class="entypo-user"></label>

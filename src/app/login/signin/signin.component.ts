@@ -8,10 +8,8 @@ import { Router,Navigation, } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
   signInform:FormGroup ;
-  private _router: any;
-  private _fb: any;
-  constructor(private_router:Router,private_fb:FormBuilder){
-    this.signInform=this._fb.Group({
+  constructor(private _router:Router,private _fb:FormBuilder){
+    this.signInform=this._fb.group({
       username: this._fb.control('', (Validators.required, Validators.email)),
       pwd:this._fb.control ('', (Validators.required, Validators.minLength(6)))
     })
@@ -24,7 +22,7 @@ export class SigninComponent implements OnInit {
   onsubmit(){
     if(this.signInform.valid){
       console.log('form is valid',this.signInform.value);
-      this._router.navigate('/main');
+      this._router.navigate(['/main/home']);
       
       
     }else{
@@ -34,7 +32,7 @@ export class SigninComponent implements OnInit {
     
   }
   gotoregister(){
-    this._router.navigate('/register');
+    this._router.navigate(['/register']);
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { FormGroup, Validators,FormControl,NgForm } from '@angular/forms';
-import { Route,Router } from '@angular/router';
+import { FormGroup, Validators,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +9,8 @@ import { Route,Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  submitted:false | undefined;
-  constructor(private_router:Router) {
+  submitted: boolean | undefined;
+  constructor() {
     this.registerForm =new FormGroup({
       title:new FormControl ('', Validators.required),
       firstName:new FormControl ('', Validators.required),
